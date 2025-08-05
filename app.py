@@ -815,6 +815,11 @@ In every era, humanity has faced the same questions: Who am I? What is my purpos
 *Wisdom Weaver is more than an app. It’s a living dialogue between past and present—a companion for every soul who believes that wisdom is not something we learn, but something we remember.*
 """)
 
+# Greeting toast pop up
+    if not st.session_state.get("welcomed", False):
+        time.sleep(1)  # Delay to allow UI to load
+        st.toast("🙏 Namaste, seeker of wisdom... The Gita awaits your question. ✨", icon="🕉️")
+        st.session_state["welcomed"] = True
 
 if __name__ == "__main__":
     main()
